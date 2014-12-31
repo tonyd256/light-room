@@ -24,6 +24,7 @@ function displayLine() {
     var g = image.pixels[index * 3 + 1];
     var b = image.pixels[index * 3 + 2];
     client.setPixel(i, r, g, b);
+    client.setPixel(i + 64, r, g, b);
   }
 
   client.writePixels();
