@@ -1,7 +1,7 @@
 var pixelr = require('pixelr');
 var opc = require('./opc');
 
-var client = new opc('light-room.local', 7890);
+var client = new opc('localhost', 7890);
 
 pixelr.read('images/flames.jpeg', 'jpeg', processImage);
 
