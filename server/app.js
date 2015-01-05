@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var qt = require('quickthumb');
 
 var index = require('./routes');
 var texture = require('./routes/texture');
@@ -12,7 +13,8 @@ var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', qt.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/textures', texture);
